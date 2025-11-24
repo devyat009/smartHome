@@ -45,4 +45,31 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+  // Seleciona todos os botões de luz
+  document.querySelectorAll('.light-toggle').forEach(btn => {
+    const id = btn.getAttribute('data-id');
+    const powerBg = btn.querySelector('.power-bg');
+    const storageKey = `light-${id}`;
+    let ligado = localStorage.getItem(storageKey) === 'true';
+
+    function updateUI() {
+      if (ligado) {
+        powerBg.classList.remove('bg-gray-300');
+        powerBg.classList.add('bg-green-500');
+        btn.setAttribute('aria-pressed', 'true');
+      } else {
+        powerBg.classList.remove('bg-green-500');
+        powerBg.classList.add('bg-gray-300');
+        btn.setAttribute('aria-pressed', 'false');
+      }
+    }
+
+    updateUI();
+
+    btn.addEventListener('click', () => {
+      ligado = !ligado;
+      localStorage.setItem(storageKey, ligado);
+      updateUI();
+    });
+  });
 });
