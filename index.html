@@ -7,12 +7,161 @@
       <link rel="stylesheet" href="styles.css">
       <!-- Tailwind CSS -->
       <script src="https://cdn.tailwindcss.com"></script>
+
+      <!-- Google Symbols -->
+      <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
       <script src="app.js" defer></script>
   </head>
 
   <body>
     <!-- background  -->
-    <div class=""></div>
+    <div class="wrapper bg-gray-200 min-h-screen p-4">
+      <header class="mb-8 self-start">
+        <h1 class="text-3xl font-bold text-gray-800">Smart Home</h1>
+      </header>
+
+      <div class="grid grid-cols-1 md:grid-cols-1 gap-4">
+        <!-- list of rooms-->
+        <button
+          id="open-rooms"
+          class="w-full text-left bg-white p-3 rounded-2xl shadow-md flex items-center gap-4 focus:outline-none focus:ring-2 focus:ring-blue-400
+            hover:ring-2 hover:ring-blue-400 transition"
+          aria-label="Abrir lista de cômodos"
+          aria-expanded="false"
+          aria-controls="rooms-section"
+        >
+          <span class="material-symbols-outlined text-3xl text-blue-500" aria-hidden="true">home_app_logo</span>
+          <h2 class="text-2xl font-semmibold text-gray-800">Lista de Cômodos</h2>
+          <span id="rooms-chevron" class="material-symbols-outlined text-3xl ml-auto text-gray-400" aria-hidden="true">keyboard_arrow_right</span>
+        </button>
+        <!-- rooms and buttons -->
+        <div id="rooms-section" class="hidden mt-2 bg-white p-6 rounded-2xl shadow-md grid grid-cols-1 md:grid-cols-2 gap-4" aria-label="Seção de cômodos" tabindex="-1">
+          <!-- Sala de Estar -->
+          <div class="bg-gray-50 p-4 rounded-lg flex flex-col gap-2">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-yellow-500 flex items-center">weekend</span>
+              <h3 class="text-xl font-bold text-gray-800 flex items-center">Sala de Estar</h3>
+            </div>
+            <div class="grid grid-cols-1 gap-2">
+              <button
+                class="flex items-center gap-2 bg-gray-100 hover:bg-blue-100 text-gray-700 px-3 py-2 rounded-lg transition focus:outline-none focus:ring-2 focus:ring-blue-400"
+                aria-label="Luz da Sala de Estar"
+              >
+                <span class="material-symbols-outlined text-xl text-yellow-400" aria-hidden="true">lightbulb</span>
+                Luz
+              </button>
+            </div>
+          </div>
+          <!-- Quarto 1 -->
+          <div class="bg-gray-50 p-4 rounded-lg flex flex-col gap-2 grid grid-cols-1">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-blue-500 flex items-center">single_bed</span>
+              <h3 class="text-xl font-bold text-gray-800 flex items-center">Quarto 1</h3>
+            </div>
+            <div class="grid grid-cols-2 gap-2">
+              <button
+                class="flex items-center gap-2 bg-gray-100 hover:bg-blue-100 text-gray-700 px-3 py-2 rounded-lg transition focus:outline-none focus:ring-2 focus:ring-blue-400"
+                aria-label="Lâmpada"
+              >
+                <span class="material-symbols-outlined text-xl text-yellow-400" aria-hidden="true">lightbulb</span>
+                Lâmpada
+              </button>
+
+              <button
+                class="flex items-center gap-2 bg-gray-100 hover:bg-blue-100 text-gray-700 px-3 py-2 rounded-lg transition focus:outline-none focus:ring-2 focus:ring-blue-400"
+                aria-label="Luz do Banheiro"
+              >
+                <span class="material-symbols-outlined text-xl text-blue-400" aria-hidden="true">light</span>
+                Luz Banheiro
+              </button>
+            </div>
+
+          </div>
+          <!-- Quarto 2 -->
+          <div class="bg-gray-50 p-4 rounded-lg flex flex-col gap-2">
+            <h3 class="text-xl font-bold text-gray-800">Quarto 2</h3>
+            <span class="text-gray-600">Lâmpada</span>
+          </div>
+          <!-- Varanda -->
+          <div class="bg-gray-50 p-4 rounded-lg flex flex-col gap-2">
+            <h3 class="text-xl font-bold text-gray-800">Varanda</h3>
+          </div>
+          <!-- Cozinha -->
+          <div class="bg-gray-50 p-4 rounded-lg flex flex-col gap-2">
+            <h3 class="text-xl font-bold text-gray-800">Cozinha</h3>
+          </div>
+        </div>
+
+
+      <!-- Cards of rooms to select -->
+      <!-- <div class="bg-white p-6 rounded-2xl shadow-md space-y-6">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Sala de Estar</h2>
+        <div class="grid grid-cols-1 gap-4">
+          <div class="bg-gray-50 p-4 rounded-lg flex items-center gap-4" role="region" aria-label="Controle da Luz">
+            <div class="bg-gray-100 p-1 rounded-lg flex justify-center items-center">
+              <span class="material-symbols-outlined text-5xl text-yellow-500" aria-hidden="true">light_mode</span>
+            </div>
+            <div class="flex-1 flex items-center justify-between">
+              <div>
+                <h2 class="text-xl font-bold text-gray-800" id="luz-label">Luz</h2>
+                <span class="text-gray-600" id="status-label">
+                  Status: <span id="light-status">Desligada</span>
+                </span>
+              </div>
+              <button
+                id="light-toggle"
+                class="ml-4 p-3 bg-green-500 hover:bg-green-600 text-white rounded-full transition flex items-center justify-center"
+                aria-pressed="false"
+                aria-labelledby="luz-label status-label"
+                aria-label="Ligar ou desligar a luz"
+              >
+                <span id="power-icon" class="material-symbols-outlined text-2xl" aria-hidden="true">power_settings_new</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div> -->
+
+      <!-- <div class="bg-gray-50 p-4 rounded-lg flex items-center gap-4" role="region" aria-label="Controle da Luz">
+        <div class="bg-gray-100 p-1 rounded-lg flex justify-center items-center">
+          <span class="material-symbols-outlined text-5xl text-yellow-500" aria-hidden="true">light_mode</span>
+        </div>
+        <div class="flex-1 flex items-center justify-between">
+          <div>
+            <h2 class="text-xl font-bold text-gray-800" id="luz-label">Luz</h2>
+            <span class="text-gray-600" id="status-label">
+              Status: <span id="light-status">Desligada</span>
+            </span>
+          </div>
+          <button
+            id="light-toggle"
+            class="ml-4 p-3 bg-green-500 hover:bg-green-600 text-white rounded-full transition flex items-center justify-center"
+            aria-pressed="false"
+            aria-labelledby="luz-label status-label"
+            aria-label="Ligar ou desligar a luz"
+          >
+            <span id="power-icon" class="material-symbols-outlined text-2xl" aria-hidden="true">power_settings_new</span>
+          </button>
+        </div>
+      </div> -->
+
+      </div>
+      <!-- quick pick section -->
+      <h2 class="text-2xl mt-2" id="quick-pick">Opções Rápidas</h2>
+      <div class="grid grid-cols-2 mt-4 md:grid-cols-1 gap-2">
+        <div class="bg-white p-6 rounded-2xl shadow-md flex items-center">
+          
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-md">
+
+        </div>
+        
+      </div>
+
+      
+
+    </div>
 
   </body>
 </html>
