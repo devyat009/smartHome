@@ -11,12 +11,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const roomsSection = document.getElementById('rooms-section');
   const chevron = document.getElementById('rooms-chevron');
   const quickActionsContainer = document.getElementById('quick-actions');
+  const loadingOverlay = document.getElementById('loading-overlay');
 
   const DEVICE_STATE_PREFIX = 'smart-home-device-';
   const QUICK_ACTION_STORAGE_KEY = 'smart-home-quick-actions';
   const SNAPSHOT_STORAGE_KEY = 'smart-home-state-snapshot';
   const QUICK_ACTION_LIMIT = 5;
 
+  // Configuracoes dos dispositivos com id html, icones, etc
   const devicesConfig = [
     {
       id: 'living-room-light',
@@ -219,6 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderQuickActions();
   }
 
+  // construcao da snapshot de 0 e 1 para representar estados desligado e ligado
   function buildStateSnapshot() {
     return devicesConfig.reduce((snapshot, device) => {
       const groupKey = device.group || 'geral';
@@ -231,6 +234,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, {});
   }
 
+  // salva no localStorage
   function persistStateSnapshot(snapshot) {
     if (typeof window !== 'undefined') {
       window.smartHomeState = snapshot;
@@ -271,6 +275,16 @@ document.addEventListener('DOMContentLoaded', () => {
     //     "luzesExternas": 1
     //   }
     // }
+  }
+
+  function hideLoadingOverlay() {
+    if (!loadingOverlay) return;
+    loadingOverlay.classList.add('is-hidden');
+    setTimeout(() => {
+      if (loadingOverlay.parentElement) {
+        loadingOverlay.remove();
+      }
+    }, 700);
   }
 
   // funcao para renderizar as acoes rapidas e seus eventos
@@ -327,4 +341,5 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.light-toggle').forEach(registerButton);
   renderQuickActions();
   updateStateSnapshot();
+  setTimeout(hideLoadingOverlay, 800);
 });
