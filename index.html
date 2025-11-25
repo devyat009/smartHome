@@ -53,8 +53,8 @@
                   <span class="material-symbols-outlined text-xl text-yellow-400" aria-hidden="true">lightbulb</span>
                   Luz
                 </span>
-                <span class="power-bg rounded-full p-2 bg-gray-300 transition-colors duration-200 ml-2">
-                  <span class="material-symbols-outlined text-2xl text-white" aria-hidden="true">power_settings_new</span>
+                <span class="power-bg rounded-full p-1 bg-gray-300 transition-colors duration-200 ml-2">
+                  <span class="material-symbols-outlined text-sm text-white" aria-hidden="true">power_settings_new</span>
                 </span>
               </button>
             </div>
@@ -66,28 +66,59 @@
               <h3 class="text-xl font-bold text-gray-800 flex items-center">Quarto 1</h3>
             </div>
             <div class="grid grid-cols-2 gap-2">
+              <!-- Lâmpada do Quarto 1 -->
               <button
-                class="flex items-center gap-2 bg-gray-100 hover:bg-blue-100 text-gray-700 px-3 py-2 rounded-lg transition focus:outline-none focus:ring-2 focus:ring-blue-400"
-                aria-label="Lâmpada"
+                class="flex items-center justify-between w-full bg-gray-100 hover:bg-blue-100 text-gray-700 px-3 py-2 rounded-lg transition focus:outline-none focus:ring-2 focus:ring-blue-400 light-toggle"
+                aria-label="Ligar ou desligar a lâmpada do Quarto 1"
+                data-id="bedroom1-lamp"
               >
-                <span class="material-symbols-outlined text-xl text-yellow-400" aria-hidden="true">lightbulb</span>
-                Lâmpada
+                <span class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-xl text-yellow-400" aria-hidden="true">lightbulb</span>
+                  Lâmpada
+                </span>
+                <span class="power-bg rounded-full p-1 bg-gray-300 transition-colors duration-200 ml-2">
+                  <span class="material-symbols-outlined text-sm text-white" aria-hidden="true">power_settings_new</span>
+                </span>
               </button>
 
+              <!-- Luz do Banheiro do Quarto 1 -->
               <button
-                class="flex items-center gap-2 bg-gray-100 hover:bg-blue-100 text-gray-700 px-3 py-2 rounded-lg transition focus:outline-none focus:ring-2 focus:ring-blue-400"
-                aria-label="Luz do Banheiro"
+                class="flex items-center justify-between w-full bg-gray-100 hover:bg-blue-100 text-gray-700 px-3 py-2 rounded-lg transition focus:outline-none focus:ring-2 focus:ring-blue-400 light-toggle"
+                aria-label="Ligar ou desligar a luz do banheiro do Quarto 1"
+                data-id="bedroom1-bath"
               >
-                <span class="material-symbols-outlined text-xl text-blue-400" aria-hidden="true">light</span>
-                Luz Banheiro
+                <span class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-xl text-blue-400" aria-hidden="true">light</span>
+                  Luz Banheiro
+                </span>
+                <span class="power-bg rounded-full p-1 bg-gray-300 transition-colors duration-200 ml-2">
+                  <span class="material-symbols-outlined text-sm text-white" aria-hidden="true">power_settings_new</span>
+                </span>
               </button>
             </div>
 
           </div>
           <!-- Quarto 2 -->
           <div class="bg-gray-50 p-4 rounded-lg flex flex-col gap-2">
-            <h3 class="text-xl font-bold text-gray-800">Quarto 2</h3>
-            <span class="text-gray-600">Lâmpada</span>
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-blue-500 flex items-center">single_bed</span>
+              <h3 class="text-xl font-bold text-gray-800 flex items-center">Quarto 2</h3>
+            </div>
+            <div class="grid grid-cols-1 gap-2">
+              <button
+                class="flex items-center justify-between w-full bg-gray-100 hover:bg-blue-100 text-gray-700 px-3 py-2 rounded-lg transition focus:outline-none focus:ring-2 focus:ring-blue-400 light-toggle"
+                aria-label="Ligar ou desligar a lâmpada do Quarto 2"
+                data-id="bedroom2-lamp"
+              >
+                <span class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-xl text-yellow-400" aria-hidden="true">lightbulb</span>
+                  Lâmpada
+                </span>
+                <span class="power-bg rounded-full p-1 bg-gray-300 transition-colors duration-200 ml-2">
+                  <span class="material-symbols-outlined text-sm text-white" aria-hidden="true">power_settings_new</span>
+                </span>
+              </button>
+            </div>
           </div>
           <!-- Varanda -->
           <div class="bg-gray-50 p-4 rounded-lg flex flex-col gap-2">
