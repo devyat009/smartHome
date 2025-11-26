@@ -17,19 +17,19 @@
     <div id="loading-overlay" class="loading-overlay" aria-live="polite" aria-label="Preparando interface">
       <div class="loading-card">
         <div class="loading-grid" aria-hidden="true">
-          <span class="material-symbols-outlined loading-icon" style="color:#2563eb;">home</span>
-          <span class="material-symbols-outlined loading-icon delay-1" style="color:#fbbf24;">lightbulb</span>
-          <span class="material-symbols-outlined loading-icon delay-2" style="color:#10b981;">water_drop</span>
-          <span class="material-symbols-outlined loading-icon delay-3" style="color:#f97316;">energy_savings_leaf</span>
-          <span class="material-symbols-outlined loading-icon delay-4" style="color:#9333ea;">sensor_door</span>
-          <span class="material-symbols-outlined loading-icon delay-5" style="color:#14b8a6;">devices</span>
+          <span class="material-symbols-outlined loading-icon" style="color:#2563eb;" aria-hidden="true">home</span>
+          <span class="material-symbols-outlined loading-icon delay-1" style="color:#fbbf24;" aria-hidden="true">lightbulb</span>
+          <span class="material-symbols-outlined loading-icon delay-2" style="color:#10b981;" aria-hidden="true">water_drop</span>
+          <span class="material-symbols-outlined loading-icon delay-3" style="color:#f97316;" aria-hidden="true">energy_savings_leaf</span>
+          <span class="material-symbols-outlined loading-icon delay-4" style="color:#9333ea;" aria-hidden="true">sensor_door</span>
+          <span class="material-symbols-outlined loading-icon delay-5" style="color:#14b8a6;" aria-hidden="true">devices</span>
         </div>
         <p class="loading-text">Preparando sua casa inteligente...</p>
       </div>
     </div>
 
     <!-- background  -->
-    <div class="wrapper relative z-10 max-w-6xl mx-auto min-h-screen p-3 sm:p-4 md:p-8">
+    <main class="wrapper relative z-10 max-w-6xl mx-auto min-h-screen p-3 sm:p-4 md:p-8" role="main" aria-label="Painel principal da Smart Home">
       <!-- <div aria-hidden="true" class="absolute -top-32 -left-20 h-72 w-72 rounded-full bg-blue-200 opacity-40 blur-3xl"></div>
       <div aria-hidden="true" class="absolute top-32 right-0 translate-x-1/4 h-96 w-96 rounded-full bg-purple-200 opacity-40 blur-3xl"></div> -->
       <header class="mb-8">
@@ -136,7 +136,9 @@
               </div>
             </div>
             <div class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between border-t border-slate-100 pt-4">
-              <p id="night-routine-summary" class="text-sm text-slate-500 flex-1">Rotina noturna desativada.</p>
+              <p id="night-routine-summary" class="text-sm text-slate-500 flex-1" role="status" aria-live="polite" aria-atomic="true">
+                Rotina noturna desativada.
+              </p>
               <button
                 id="night-routine-save"
                 class="px-5 py-2 rounded-xl bg-blue-600 text-white text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-blue-400"
@@ -179,7 +181,7 @@
               <!-- Sala de Estar -->
               <div class="bg-gray-50 p-3 sm:p-4 rounded-lg flex flex-col gap-2">
                 <div class="flex items-center gap-2">
-                  <span class="material-symbols-outlined text-yellow-500 flex items-center">weekend</span>
+                  <span class="material-symbols-outlined text-yellow-500 flex items-center" aria-hidden="true">weekend</span>
                   <h4 class="text-xl font-bold text-gray-800 flex items-center">Sala de Estar</h4>
                 </div>
                 <div class="grid grid-cols-1 gap-2">
@@ -202,7 +204,7 @@
               <!-- Quarto 1 -->
               <div class="bg-gray-50 p-3 sm:p-4 rounded-lg flex flex-col gap-2">
                 <div class="flex items-center gap-2">
-                  <span class="material-symbols-outlined text-blue-500 flex items-center">single_bed</span>
+                  <span class="material-symbols-outlined text-blue-500 flex items-center" aria-hidden="true">single_bed</span>
                   <h4 class="text-xl font-bold text-gray-800 flex items-center">Quarto 1</h4>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -238,7 +240,7 @@
               <!-- Quarto 2 -->
               <div class="bg-gray-50 p-3 sm:p-4 rounded-lg flex flex-col gap-2">
                 <div class="flex items-center gap-2">
-                  <span class="material-symbols-outlined text-blue-500 flex items-center">single_bed</span>
+                  <span class="material-symbols-outlined text-blue-500 flex items-center" aria-hidden="true">single_bed</span>
                   <h4 class="text-xl font-bold text-gray-800 flex items-center">Quarto 2</h4>
                 </div>
                 <div class="grid grid-cols-1 gap-2">
@@ -260,7 +262,7 @@
               <!-- Cozinha -->
               <div class="bg-gray-50 p-3 sm:p-4 rounded-lg flex flex-col gap-2">
                 <div class="flex items-center gap-2">
-                  <span class="material-symbols-outlined text-red-400 flex items-center">dining</span>
+                  <span class="material-symbols-outlined text-red-400 flex items-center" aria-hidden="true">dining</span>
                   <h4 class="text-xl font-bold text-gray-800 flex items-center">Cozinha</h4>
                 </div>
                 <div class="grid grid-cols-1 gap-2">
@@ -292,7 +294,7 @@
               <!-- Varanda -->
               <div class="bg-gray-50 p-3 sm:p-4 rounded-lg flex flex-col gap-2">
                 <div class="flex items-center gap-2">
-                  <span class="material-symbols-outlined text-green-500 flex items-center">deck</span>
+                  <span class="material-symbols-outlined text-green-500 flex items-center" aria-hidden="true">deck</span>
                   <h4 class="text-xl font-bold text-gray-800 flex items-center">Varanda</h4>
                 </div>
                 <div class="grid grid-cols-1 gap-2">
@@ -315,7 +317,7 @@
               <!-- Área externa -->
               <div class="bg-gray-50 p-4 rounded-lg flex flex-col gap-2">
                 <div class="flex items-center gap-2">
-                  <span class="material-symbols-outlined text-emerald-500 flex items-center">yard</span>
+                  <span class="material-symbols-outlined text-emerald-500 flex items-center" aria-hidden="true">yard</span>
                   <h4 class="text-xl font-bold text-gray-800 flex items-center">Área Externa</h4>
                 </div>
                 <div class="grid grid-cols-1 gap-2">
@@ -415,7 +417,7 @@
 
       
 
-    </div>
+    </main>
 
   </body>
 </html>

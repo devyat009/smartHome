@@ -183,8 +183,23 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem(`${DEVICE_STATE_PREFIX}${id}`, state);
   }
 
+  function buildDeviceAriaLabel(button, isOn) {
+    if (!button) return null;
+    const id = button.getAttribute('data-id');
+    if (!id || !deviceMap.has(id)) return null;
+    const device = deviceMap.get(id);
+    const actionText = device.action || 'Dispositivo';
+    const locationText = device.location ? ` em ${device.location}` : '';
+    const stateText = isOn ? 'ligado' : 'desligado';
+    return `${actionText}${locationText}. Atualmente ${stateText}. Pressione para alternar.`;
+  }
+
   function applyStateToButton(button, isOn) {
     button.setAttribute('aria-pressed', isOn ? 'true' : 'false');
+    const label = buildDeviceAriaLabel(button, isOn);
+    if (label) {
+      button.setAttribute('aria-label', label);
+    }
     const powerBg = button.querySelector('.power-bg');
     if (powerBg) {
       powerBg.classList.toggle('bg-green-500', isOn);
