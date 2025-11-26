@@ -645,20 +645,20 @@ document.addEventListener('DOMContentLoaded', () => {
       const iconName = device.icon || 'tune';
 
       const card = document.createElement('button');
-      card.className = 'quick-action-card bg-white p-4 rounded-2xl shadow-md flex items-center justify-between gap-4 text-left focus:outline-none focus:ring-2 focus:ring-blue-400 light-toggle';
+      card.className = 'quick-action-card bg-white p-3 sm:p-4 rounded-2xl shadow-md flex items-center justify-between gap-3 sm:gap-4 text-left focus:outline-none focus:ring-2 focus:ring-blue-400 light-toggle w-full';
       card.dataset.id = id;
       card.setAttribute('aria-label', `Atalho para ${device.action} em ${device.location}`);
       card.setAttribute('role', 'listitem');
 
       card.innerHTML = `
-        <span class="flex items-center gap-3">
+        <span class="flex items-center gap-3 flex-1 min-w-0">
           <span class="${iconClass}" aria-hidden="true">${iconName}</span>
-          <span>
+          <span class="flex flex-col leading-tight min-w-0">
             <p class="text-xs uppercase tracking-wide text-gray-500">${device.location}</p>
-            <p class="text-lg font-semibold text-gray-800">${device.action}</p>
+            <p class="text-lg font-semibold text-gray-800 break-words">${device.action}</p>
           </span>
         </span>
-        <span class="power-bg rounded-full p-2 bg-gray-300 transition-colors duration-200 ml-4">
+        <span class="power-bg rounded-full p-2 bg-gray-300 transition-colors duration-200 shrink-0">
           <span class="material-symbols-outlined text-2xl text-white" aria-hidden="true">power_settings_new</span>
         </span>
       `;

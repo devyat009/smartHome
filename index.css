@@ -97,3 +97,27 @@
   color: #475569;
   letter-spacing: 0.04em;
 }
+
+@media (max-width: 360px) {
+  .loading-card {
+    padding: 1.25rem 1.5rem;
+    border-radius: 1.25rem;
+  }
+
+  .loading-grid {
+    gap: 0.5rem;
+  }
+
+  .quick-action-card {
+    border-radius: 1.5rem;
+  }
+
+  #night-routine-device-list {
+    gap: 0.75rem;
+  }
+
+  #night-routine-device-list .rounded-2xl {
+    border-radius: 1rem;
+    padding: 0.75rem;
+  }
+}
