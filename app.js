@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
 document.addEventListener('DOMContentLoaded', () => {
   const openRoomsBtn = document.getElementById('open-rooms');
   const roomsSection = document.getElementById('rooms-section');
@@ -326,6 +318,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function updateStateSnapshot() {
     persistStateSnapshot(buildStateSnapshot());
+    sendToBackend();
     console.log('Snapshot do estado atualizado:', window.smartHomeState);
     // resultado exemplo
     // {
@@ -352,6 +345,29 @@ document.addEventListener('DOMContentLoaded', () => {
     //     "luzesExternas": 1
     //   }
     // }
+  }
+
+  function sendToBackend() {
+    if (typeof window === 'undefined' || !window.smartHomeState) return;
+    fetch('http://localhost:3000/casa', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(window.smartHomeState),
+    })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Erro ao enviar estado para o backend');
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log('Estado enviado com sucesso:', data);
+      })
+      .catch(error => {
+        console.error('Erro ao enviar estado para o backend:', error);
+      });
   }
 
   function hideLoadingOverlay() {
